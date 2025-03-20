@@ -51,7 +51,8 @@ jobs:
   image_build:
     needs: testing
     runs-on: ubuntu-latest
-    if: jobs.testing.result == 'success'
+    if: ${{ contains(needs.testing.result, 'success') }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
