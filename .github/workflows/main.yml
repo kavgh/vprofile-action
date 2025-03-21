@@ -71,5 +71,3 @@ jobs:
         id: build
         run: |
           docker build -t ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY_NAME }}:${{ github.run_number }} -t ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY_NAME }}:latest --push .
-        #  docker push ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY_NAME }}:${{ github.run_number }}
-        #  docker push ${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY_NAME }}:latest
