@@ -19,7 +19,7 @@ env:
 
 jobs:
   latest:
-    if: ${{ inputs.choice }} == 'ubuntu-latest'
+    if: ${{ inputs.choice == 'ubuntu-latest' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +31,7 @@ jobs:
       - run: ls -la
 
   _22-04:
-    if: ${{ inputs.choice }} == 'ubuntu-22.04'
+    if: ${{ inputs.choice == 'ubuntu-22.04' }}
     runs-on: ubuntu-22.04
 
     steps:
