@@ -1,6 +1,7 @@
 name: vprofile actions
 on:
   push:
+  pull_request:  
   workflow_dispatch:
     inputs:
       choice:
@@ -19,15 +20,15 @@ env:
 
 jobs:
   latest:
-    runs-on: ${{ inputs.choice || 'ubuntu-20.04' }}
+    runs-on: ${{ inputs.choice || 'ubuntu-24.04' }}
 
     steps:
       - run: ls -la
     
       - name: Checkout the code
         uses: actions/checkout@v4.2.2
-
-      - run: ls -la
+          
+      - run: git branch -vv
       
      # - name: Maven tests
      #   run: mvn test
