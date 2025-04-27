@@ -27,8 +27,6 @@ jobs:
     
       - name: Checkout the code
         uses: actions/checkout@v4.2.2
-        with:
-          ref: ${{ github.ref }}
           
       - run: git branch -vv
       
