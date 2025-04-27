@@ -2,10 +2,14 @@ name: vprofile actions
 on: 
   workflow_dispatch:
     inputs:
-      variable:
+      choice:
         description: "for test"
-        type: environment
+        type: choice
         required: false
+        options:
+          - ubuntu-latest
+          - ubuntu-VirtualBox
+          - ubuntu-24.04
 env:
   AWS_REGION: us-east-2
   ECR_REPOSITORY_NAME: gitops-ecr
@@ -13,7 +17,7 @@ env:
 
 jobs:
   testing:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.choice }}
 
     steps:
       - run: ls -la
