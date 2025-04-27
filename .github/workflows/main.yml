@@ -19,7 +19,7 @@ env:
 
 jobs:
   latest:
-    runs-on: ${{ inputs.choice || ubuntu-20.04 }}
+    runs-on: ${{ inputs.choice || 'ubuntu-20.04' }}
 
     steps:
       - run: ls -la
