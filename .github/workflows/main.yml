@@ -6,7 +6,7 @@ on:
       choice:
         description: "for test"
         type: choice
-        required: false
+        required: true
         default: 'ubuntu-22.04'
         options:
           - ubuntu-latest
