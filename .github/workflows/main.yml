@@ -18,8 +18,21 @@ env:
   EKS_CLUSTER_NAME: vrpofile-eks
 
 jobs:
-  testing:
-    runs-on: ${{ inputs.choice }}
+  latest:
+    if: input.choice == 'ubuntu-latest'
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: ls -la
+    
+      - name: Checkout the code
+        uses: actions/checkout@d3f86a106a0bac45b974a628896c90dbdf5c8093
+
+      - run: ls -la
+
+  _24-04:
+    if: input.choice == 'ubuntu-24.04'
+    runs-on: ubuntu-24.04
 
     steps:
       - run: ls -la
