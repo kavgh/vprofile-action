@@ -1,5 +1,6 @@
 name: vprofile actions
-on: 
+on:
+  push:
   workflow_dispatch:
     inputs:
       choice:
