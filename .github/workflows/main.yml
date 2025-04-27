@@ -4,7 +4,6 @@ on:
     inputs:
       variable:
         description: "for test"
-        default: value
         type: environment
         required: false
 env:
