@@ -7,7 +7,7 @@ on:
         description: "for test"
         type: choice
         required: false
-        default: ubuntu-22.04
+        default: 'ubuntu-22.04'
         options:
           - ubuntu-latest
           - ubuntu-VirtualBox
