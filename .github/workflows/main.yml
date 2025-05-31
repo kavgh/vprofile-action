@@ -22,12 +22,12 @@ jobs:
     runs-on: ${{ inputs.choice || 'ubuntu-20.04' }}
 
     steps:
-      - run: ls -la
+      - run: echo ${{ vars.TEST }}
     
-      - name: Checkout the code
-        uses: actions/checkout@v4.2.2
+      # - name: Checkout the code
+      #   uses: actions/checkout@v4.2.2
 
-      - run: ls -la
+      # - run: ls -la
       
      # - name: Maven tests
      #   run: mvn test
