@@ -20,7 +20,7 @@ env:
 jobs:
   latest:
     runs-on: ${{ inputs.choice || 'ubuntu-20.04' }}
-    environment: ${{ github.ref == 'test' && 'test' || 'prod' }}
+    environment: ${{ (github.ref == 'test' && 'test') || (github.ref == 'main' && 'prod') }}
 
     steps:
       - run: echo ${{ vars.TEST }}
